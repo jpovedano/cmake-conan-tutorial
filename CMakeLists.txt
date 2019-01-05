@@ -12,6 +12,10 @@ find_package(GTest REQUIRED)
 # Library
 add_library(asl ${CMAKE_SOURCE_DIR}/src/asl.cxx)
 target_include_directories(asl PUBLIC ${CMAKE_SOURCE_DIR}/src)
+set_target_properties(asl
+    PROPERTIES
+        PUBLIC_HEADER ${CMAKE_SOURCE_DIR}/src/asl.hpp
+)
 target_link_libraries(asl PUBLIC CONAN_PKG::OpenSSL)
 
 # Tests
@@ -19,3 +23,10 @@ enable_testing()
 add_executable(asltest ${CMAKE_SOURCE_DIR}/src/test/asltest.cxx)
 target_link_libraries(asltest asl CONAN_PKG::gtest)
 add_test(NAME asltest COMMAND asltest)
+
+# Installation (relative to CMAKE_INSTALL_PREFIX)
+install(TARGETS asl
+    ARCHIVE DESTINATION lib
+    LIBRARY DESTINATION lib
+    PUBLIC_HEADER DESTINATION include
+)
