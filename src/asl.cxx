@@ -2,7 +2,7 @@
 
 std::string ASL::random_key()
 {
-    std::string mystring = "Hello World";
+    std::string mystring;
 
     return mystring;
 }

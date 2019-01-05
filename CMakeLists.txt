@@ -2,3 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(asl VERSION 1.0)
 
 add_library(asl ${CMAKE_SOURCE_DIR}/src/asl.cxx)
+target_include_directories(asl PUBLIC ${CMAKE_SOURCE_DIR}/src)
+
+add_executable(asltest ${CMAKE_SOURCE_DIR}/src/test/asltest.cxx)
+target_link_libraries(asltest asl)
