@@ -4,7 +4,7 @@
 
 #include "openssl/des.h"
 
-std::string ASL::random_key()
+std::string ASL::generate_random_key()
 {
     DES_cblock myblock;
 

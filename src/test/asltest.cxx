@@ -14,6 +14,6 @@ using namespace ASL;
 // }
 TEST(asltest, nonempty)
 {
-    std::string mykey = random_key();
+    std::string mykey = generate_random_key();
     EXPECT_NE(0, mykey.size());
 }
