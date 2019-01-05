@@ -1,5 +1,5 @@
 #include <string>
 
 namespace ASL {
-    std::string random_key();
+    std::string generate_random_key();
 };
