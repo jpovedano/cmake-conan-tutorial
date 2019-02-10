@@ -23,7 +23,7 @@ pipeline {
         stage('Test') {
             steps {
                 dir('build') {
-                    sh 'ctest .'
+                    sh 'ctest'
                 }
             }
         }
@@ -31,7 +31,7 @@ pipeline {
         stage('Bunding') {
             steps {
                 dir('build') {
-                    sh 'cpack .'
+                    sh 'cpack'
                 }
             }
         }
