@@ -22,7 +22,7 @@ target_link_libraries(asl PUBLIC CONAN_PKG::OpenSSL)
 enable_testing()
 add_executable(asltest ${CMAKE_SOURCE_DIR}/src/test/asltest.cxx)
 target_link_libraries(asltest asl CONAN_PKG::gtest)
-add_test(NAME asltest COMMAND asltest)
+add_test(NAME asltest COMMAND asltest --gtest_output=xml:results.xml)
 
 # Installation (relative to CMAKE_INSTALL_PREFIX)
 install(TARGETS asl
